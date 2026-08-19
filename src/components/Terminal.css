@@ -1,0 +1,107 @@
+.terminal-window {
+  width: 100%;
+  max-width: 550px;
+  background: rgba(10, 10, 26, 0.75);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 212, 255, 0.1);
+  overflow: hidden;
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+  backdrop-filter: blur(10px);
+  margin: 0 auto;
+}
+
+.terminal-header {
+  background: rgba(20, 20, 45, 0.9);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+  position: relative;
+}
+
+.terminal-header .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+  display: inline-block;
+}
+
+.terminal-header .dot.red { background: #ff5f56; }
+.terminal-header .dot.yellow { background: #ffbd2e; }
+.terminal-header .dot.green { background: #27c93f; }
+
+.terminal-title {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.terminal-body {
+  height: 280px;
+  padding: 16px;
+  overflow-y: auto;
+  font-size: 0.85rem;
+  color: #39ff14; /* Matrix neon green */
+  text-shadow: 0 0 2px rgba(57, 255, 20, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  scroll-behavior: smooth;
+  cursor: text;
+}
+
+/* Custom Scrollbar for Terminal */
+.terminal-body::-webkit-scrollbar {
+  width: 6px;
+}
+.terminal-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.terminal-body::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 255, 0.2);
+  border-radius: 3px;
+}
+
+.terminal-line {
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.terminal-line.input {
+  color: var(--text);
+  font-weight: bold;
+}
+
+.terminal-line.output {
+  color: #a5f3fc; /* cyan light */
+}
+
+.prompt {
+  color: #c084fc; /* purple light */
+  font-weight: bold;
+}
+
+.terminal-input-row {
+  display: flex;
+  align-items: center;
+}
+
+.terminal-input-row input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
+  padding: 0;
+  margin-left: 4px;
+  caret-color: #39ff14;
+}

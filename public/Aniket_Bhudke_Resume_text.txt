@@ -1,0 +1,40 @@
+ANIKET VIJAY BHUDKE
+EMAIL: bhudkea@gmail.com | CONTACT: +91 7249405334 | Address: Akola, Maharashtra, India
+Profiles: LinkedIn | GitHub | LeetCode | HackerRank | GeeksforGeeks
+TECHNICAL SKILLS
+ Languages: Python, JavaScript
+ Tools: Git, GitHub, AWS, VS Code
+ Frameworks: FastAPI, Django
+ Libraries: NumPy, Pandas, Matplotlib
+ Frontend: HTML, CSS, React
+ CS Fundamentals: Data Structures, REST APIs, Backend Development
+EXPERIENCE
+Python Backend Intern | Leadturtle Technology Services (Nov 2023 – Jan 2024)
+ Worked on backend development using Python and REST APIs.
+ Assisted in developing backend services for web applications.
+ Used Git and GitHub for version control and collaboration.
+ Gained experience in API development and backend architecture.
+PROJECTS
+Event Decoration System | FastAPI, HTML, CSS, JavaScript
+ Built a web-based platform where users can book event decoration services.
+ Implemented authentication and booking management system.
+ Developed backend APIs using FastAPI.
+Restaurant Management System | FastAPI, HTML, CSS, JavaScript
+ Developed a QR-based digital restaurant menu system.
+ Users can browse menu items online.
+ Designed a responsive interface for mobile devices.
+COMPETITIVE PROGRAMMING
+ Active on LeetCode, HackerRank, and GeeksforGeeks.
+ Practicing Data Structures and Algorithms regularly.
+HACKATHON AND AWARDS
+ MIT ADT Hackathon – Top 20 Finalist (1200+ teams) with project 'Mentora'.
+ Cyber Shiksha for Cyber Suraksha – Quick Heal Foundation Pune; National Level Award.
+CERTIFICATIONS
+ Full Stack Python Developer – Naresh IT, Hyderabad
+ Data Structures in Python – IBM
+ Data Structures in Python – University of Michigan
+EDUCATION
+ Master of Computer Applications (MCA – Data Science), MIT ADT University, Pune | First Year
+ Bachelor of Computer Applications (BCA), Shankarlal Khendelwal College, Akola | CGPA: 7.7 | Expected
+Graduation: 2025
+
