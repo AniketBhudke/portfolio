@@ -1533,8 +1533,10 @@ body {
 
 .achievement-photo {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+  height: clamp(220px, 28vw, 320px);
+  object-fit: contain;
+  object-position: center;
+  background: rgba(0, 0, 0, 0.2);
   border-radius: calc(var(--radius) - 4px);
   border: 1px solid var(--border);
 }
