@@ -602,6 +602,7 @@ export default function Portfolio() {
                   </div>
                 </Reveal>
               ))}
+              {/* hi */}
             </div>
           )}
 {/* hi */}
