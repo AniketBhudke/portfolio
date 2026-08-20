@@ -4,6 +4,7 @@ import Reveal from '../components/Reveal';
 import { useInView } from '../hooks/useInView';
 import { projects } from '../data/projects';
 import profilePic from '../assets/profile.png';
+import cyberAwardPhoto from '../passport photo.jpg';
 import Terminal from '../components/Terminal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faHackerrank } from '@fortawesome/free-brands-svg-icons';
@@ -72,7 +73,7 @@ const achievements = [
     category: 'Cyber Security', 
     detail: 'Recognized as a 2-Year Award Holder in the Quick Heal Foundation campaign for active participation and contribution to cyber security awareness.', 
     icon: faShieldHalved,
-    photo: '/cyber-shiksha-award.jpg',
+    photo: cyberAwardPhoto,
     highlightBadge: '🛡️ 2-Year Award Holder',
     stats: 'Quick Heal Foundation'
   },
@@ -584,7 +585,7 @@ export default function Portfolio() {
                     <img
                       className="achievement-photo"
                       src={ach.photo}
-                      alt="Aniket Bhudke receiving the Cyber Shiksha award"
+                      alt="Aniket Bhudke"
                       loading="lazy"
                     />
                   )}
