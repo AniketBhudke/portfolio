@@ -1271,6 +1271,27 @@ body {
   line-height: 1.7;
 }
 
+.contact-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 28px;
+  padding: 8px 12px;
+  border: 1px solid rgba(57, 232, 139, 0.35);
+  border-radius: 999px;
+  color: #39e88b;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.contact-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #39e88b;
+  box-shadow: 0 0 10px rgba(57, 232, 139, 0.7);
+}
+
 .contact-details {
   display: flex;
   flex-direction: column;
