@@ -606,6 +606,9 @@ export default function Portfolio() {
             </div>
           )}
 {/* hi */}
+          
+          {/* Seminars & Workshops */}
+          {/* Seminars & Workshops */}
           {/* Seminars & Workshops */}
           {credentialsTab === 'seminars' && (
             <div className="seminars-container">
@@ -676,6 +679,10 @@ export default function Portfolio() {
             <p>
               For project inquiries, collaborations, or career opportunities, please reach out using the form or the details below. I aim to respond promptly.
             </p>
+            <div className="contact-status">
+              <span className="contact-status-dot" aria-hidden="true" />
+              Available for new opportunities
+            </div>
             <div className="contact-details">
               <div><FontAwesomeIcon icon={faEnvelope} className="info-icon" /><span>bhudkea@gmail.com</span></div>
               <div><FontAwesomeIcon icon={faPhone} className="info-icon" /><span>+91-7249405334, +91-9511931411</span></div>
