@@ -606,6 +606,9 @@ export default function Portfolio() {
             </div>
           )}
 {/* hi */}
+          
+          {/* Seminars & Workshops */}
+          {/* Seminars & Workshops */}
           {/* Seminars & Workshops */}
           {credentialsTab === 'seminars' && (
             <div className="seminars-container">
