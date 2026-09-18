@@ -4,14 +4,19 @@ import Reveal from '../components/Reveal';
 import { useInView } from '../hooks/useInView';
 import { projects } from '../data/projects';
 import profilePic from '../assets/profile.png';
-import cyberAwardPhoto from '../passport photo.jpg';
+import cyberCampaignPhoto from '../assets/cyber shiksha for cyber suraksha/WhatsApp Image 2026-08-22 at 10.14.53 PM.jpeg';
+import researchPhoto from '../assets/Research paper compitition/WhatsApp Image 2026-09-18 at 8.32.30 PM.jpeg';
+import mentoraPhoto from '../assets/mentora/hero.jpeg';
+import nationalRecognitionPhoto from '../assets/national level/WhatsApp Image 2026-08-22 at 10.14.53 PM.jpeg';
+import technicalResume from '../assets/Aniket_Bhudke_Technical_Resume.docx';
 import Terminal from '../components/Terminal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faHackerrank } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faHackerrank, faPython, faAws, faHtml5, faCss3Alt, faJs } from '@fortawesome/free-brands-svg-icons';
 import {
   faCode, faDatabase, faServer, faEnvelope, faPhone, faMapMarkerAlt,
   faGraduationCap, faCertificate, faTrophy, faShieldHalved, faLaptopCode,
-  faAward, faTerminal, faChartBar, faDownload, faCloud, faBolt
+  faAward, faTerminal, faChartBar, faDownload, faCloud, faBolt,
+  faLightbulb, faFileAlt, faChartLine, faChevronDown
 } from '@fortawesome/free-solid-svg-icons';
 import '../App.css';
 
@@ -55,17 +60,25 @@ const achievements = [
     category: 'Research & Innovation', 
     detail: 'Secured 1st Prize at the 8th International Symposium on Innovation in Global Technology for our research paper on AI-Based Intelligent Traffic Management.', 
     icon: faAward,
+    photo: researchPhoto,
+    photoAlt: 'Research paper presentation at the international symposium',
     highlightBadge: '🏆 1st Prize Winner',
-    stats: '8th Int. Symposium'
+    stats: '8th Int. Symposium',
+    link: '/stories/research-award',
+    ctaLabel: 'Read the research story'
   },
   { 
     id: 2, 
     title: 'MIT ADT Hackathon – Top 20 Finalist', 
     category: 'Hackathon', 
-    detail: 'Achieved Top 20 Finalist position in the MIT ADT Hackathon among 1,200+ competing teams with the project "Mentora".', 
+    detail: 'Led the Mentora project in the MIT ADT Hackathon, where our team made it to the Top 20 finalist round among 1,200+ competing teams. Mentora is an AI-powered student guidance platform that personalizes learning paths and career direction.', 
     icon: faTrophy,
+    photo: mentoraPhoto,
+    photoAlt: 'Mentora project interface',
     highlightBadge: '🚀 Top 20 / 1,200+ Teams',
-    stats: '1,200+ Teams'
+    stats: '1,200+ Teams',
+    link: '/projects/mentora-career-educational-advisor',
+    ctaLabel: 'View Mentora story'
   },
   { 
     id: 3, 
@@ -73,9 +86,12 @@ const achievements = [
     category: 'Cyber Security', 
     detail: 'Recognized as a 2-Year Award Holder in the Quick Heal Foundation campaign for active participation and contribution to cyber security awareness.', 
     icon: faShieldHalved,
-    photo: cyberAwardPhoto,
+    photo: cyberCampaignPhoto,
+    photoAlt: 'Cyber Shiksha campaign recognition',
     highlightBadge: '🛡️ 2-Year Award Holder',
-    stats: 'Quick Heal Foundation'
+    stats: 'Quick Heal Foundation',
+    link: '/stories/cyber-shiksha',
+    ctaLabel: 'Read my two-year journey'
   },
   { 
     id: 4, 
@@ -83,8 +99,12 @@ const achievements = [
     category: 'Cyber Security', 
     detail: 'National level recognition for active contribution towards cyber security awareness programs.', 
     icon: faShieldHalved,
+    photo: nationalRecognitionPhoto,
+    photoAlt: 'National Cyber Shiksha recognition',
     highlightBadge: '🇮🇳 National Level',
-    stats: 'National Awareness'
+    stats: 'National Awareness',
+    link: '/stories/national-recognition',
+    ctaLabel: 'Read my 2025 journey'
   },
   { 
     id: 5, 
@@ -93,7 +113,9 @@ const achievements = [
     detail: 'Active solver and coder on competitive programming platforms including LeetCode, HackerRank, and GeeksforGeeks.', 
     icon: faLaptopCode,
     highlightBadge: '⭐ Multi-Platform Coder',
-    stats: 'LeetCode & HackerRank'
+    stats: 'LeetCode & HackerRank',
+    link: '/stories/competitive-programming',
+    ctaLabel: 'Explore my coding journey'
   }
 ];
 
@@ -124,27 +146,27 @@ const certificates = [
 const seminarSkills = ['Cyber Security Awareness', 'Public Speaking', 'Communication Skills', 'Digital Safety Awareness', 'Team Collaboration', 'Leadership', 'Social Awareness', 'Presentation Skills', 'Community Engagement'];
 
 const coCurricular = [
-  'Participated in Hackathons and Technical Symposiums',
+  'Smart India Hackathon 2025 - Top 20 Finalist',
   'Research Paper Presentation on AI-Based Traffic Management System',
-  'Active Participation in Cyber Security Awareness Programs',
-  'Competitive Programming practice on LeetCode, HackerRank, and GeeksforGeeks',
-  'Technical Seminar and Workshop Participation',
+  'Best Paper Presentation Award - ISIGT 2025',
+  'Competitive Programming Practice on LeetCode, HackerRank, and GeeksforGeeks',
+  'Technical Seminars & Workshops',
 ];
 
 const extraCurricular = [
+  'Cyber Warrior - Cyber Shiksha for Cyber Suraksha Campaign',
+  'Delivered 21 Cybersecurity Awareness Presentations',
+  'Reached Approximately 6,900 Students',
   'Public Speaking and Technical Presentations',
-  'Team Collaboration in Academic Projects',
-  'Social Awareness Activities in Schools and Urban Areas',
-  'Event Participation and Coordination',
-  'Self-Learning of Emerging Technologies and AI Tools',
+  'Team Collaboration and Event Coordination',
 ];
 
 const personalInfo = [
-  { label: 'Date of Birth', value: '20 May, 2004' },
-  { label: 'Gender & Status', value: 'Male · Single' },
-  { label: 'Current Address', value: 'Loni Kalbhor, Pune, Maharashtra, India' },
-  { label: 'Permanent Address', value: 'Maratha Nagar, Bhavani Mandhir Road, Akola, Maharashtra, India - 444103' },
-  { label: 'Interests & Hobbies', value: 'Coding & Web Development, Exploring AI & Smart Technologies, Competitive Programming, Research & Innovation, Cyber Security Awareness' },
+  { label: 'Education', value: 'MCA - Data Science\nMIT-ADT University, Loni Kalbhor\n2025-2027' },
+  { label: 'Career Focus', value: 'Data Analytics, Python Development, Business Intelligence' },
+  { label: 'Technical Interests', value: 'Python, SQL, Data Visualization, Backend Development, AI Technologies' },
+  { label: 'Professional Interests', value: 'Problem Solving, Research, Continuous Learning, Technical Innovation' },
+  { label: 'Based In', value: 'Pune, Maharashtra, India' },
 ];
 
 /* ── COMPONENT ── */
@@ -189,137 +211,167 @@ export default function Portfolio() {
       {/* ── NAVBAR ── */}
       <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
         <div className="nav-brand" onClick={() => scrollTo('home')}>
-          <span className="brand-dot" />&nbsp;Aniket<span className="accent">.</span>
+          <span className="brand-ab">AB</span>
         </div>
-        <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
-          <span /><span /><span />
-        </button>
+        
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-          {['home', 'about', 'resume', 'services', 'projects', 'credentials', 'contact'].map((s) => (
+          {['home', 'about', 'skills', 'projects', 'certifications', 'resume', 'contact'].map((s) => (
             <li key={s}>
-              <button onClick={() => scrollTo(s)}>
-                {s === 'credentials' ? 'Credentials' : s.charAt(0).toUpperCase() + s.slice(1)}
+              <button className={s === 'home' ? 'active-link' : ''} onClick={() => scrollTo(s === 'certifications' ? 'credentials' : s)}>
+                {s === 'certifications' ? 'Certifications' : s.charAt(0).toUpperCase() + s.slice(1)}
               </button>
             </li>
           ))}
         </ul>
+
+        <div className="nav-actions">
+          <button className="btn-connect" onClick={() => scrollTo('contact')}>
+            <FontAwesomeIcon icon={faEnvelope} /> Let's Connect
+          </button>
+          <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+            <span /><span /><span />
+          </button>
+        </div>
       </nav>
 
       {/* ── HERO ── */}
-      <section id="home" className="hero">
-        <div className="hero-bg" aria-hidden="true">
-          <span className="hero-orb hero-orb-1" />
-          <span className="hero-orb hero-orb-2" />
-          <span className="hero-orb hero-orb-3" />
-        </div>
-        <div className="hero-text">
-          <p className="greeting">HELLO, I'M</p>
-          <h1>Aniket <span className="accent">Bhudke</span></h1>
-          <h2 className="role">M.C.A. – Data Science <span className="accent">(Python Backend & Full-Stack)</span></h2>
-          <p className="hero-edu">MIT College of Management Pune · 2025 - 2027</p>
-          <p className="hero-desc">
-            Motivated and detail-oriented M.C.A. (Data Science) student skilled in Python, FastAPI, REST API design, and data analytics. I build scalable backend services and full-stack applications, and have hands-on experience with cloud deployments (AWS EC2 & S3) and relational databases.
-          </p>
-          <div className="hero-actions">
-            <a href="/Aniket_Bhudke_Resume.pdf" target="_blank" rel="noreferrer" className="btn-primary"><FontAwesomeIcon icon={faDownload} />&nbsp;View Resume</a>
-            <button type="button" className="btn-outline" onClick={() => scrollTo('contact')}><FontAwesomeIcon icon={faEnvelope} />&nbsp;Contact Me</button>
+      {/* ── HERO ── */}
+      <section id="home" className="hero-section">
+        <div className="hero-content-wrapper">
+          <div className="hero-text">
+            <p className="greeting">HELLO, I'm</p>
+            <h1>Aniket <span className="accent">Bhudke</span></h1>
+            <h2 className="role">Python Developer | <span className="accent">Data Analyst</span> | Full-Stack Developer</h2>
+            
+            <p className="hero-desc">
+              I'm an MCA Data Science student with a strong interest in data analytics and software development. I enjoy working with data, building web applications, and solving real-world problems using technology.
+              <br/><br/>
+              I am particularly interested in the field of Data Analytics, where I can analyze data, generate insights, and contribute to data-driven decision making.
+            </p>
+            
+            <div className="hero-actions">
+              <a href={technicalResume} download className="btn-primary">
+                <FontAwesomeIcon icon={faDownload} /> View Resume
+              </a>
+              <button onClick={() => scrollTo('contact')} className="btn-outline">
+                <FontAwesomeIcon icon={faEnvelope} /> Contact Me
+              </button>
+            </div>
           </div>
-          <div className="social-row">
-            <a href="https://github.com/AniketBhudke" target="_blank" rel="noreferrer" aria-label="GitHub"><FontAwesomeIcon icon={faGithub} /></a>
-            <a href="https://www.linkedin.com/in/aniket-bhudke-389b592b0/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FontAwesomeIcon icon={faLinkedin} /></a>
-            <a href="https://hackerrank.com/profile/bhudkea" target="_blank" rel="noreferrer" aria-label="HackerRank" className="hackerrank"><FontAwesomeIcon icon={faHackerrank} /></a>
-            <a href="mailto:bhudkea@gmail.com" aria-label="Email"><FontAwesomeIcon icon={faEnvelope} /></a>
-          </div>
-        </div>
-        <div className="hero-image">
-          <div className="image-ring">
-            <svg className="avatar-svg" viewBox="0 0 360 360" role="img" aria-label="Aniket Bhudke avatar">
-              <defs>
-                <clipPath id="avatarClip">
-                  <circle cx="180" cy="180" r="120" />
-                </clipPath>
-                <linearGradient id="g1" x1="0%" x2="100%" y1="0%" y2="100%">
-                  <stop offset="0%" stopColor="#00d4ff" />
-                  <stop offset="60%" stopColor="#39e88b" />
-                </linearGradient>
-                <linearGradient id="g2" x1="0%" x2="100%" y1="0%" y2="100%">
-                  <stop offset="0%" stopColor="#00b9ff" />
-                  <stop offset="100%" stopColor="#7b5ea7" />
-                </linearGradient>
-                <linearGradient id="g3" x1="0%" x2="100%" y1="0%" y2="100%">
-                  <stop offset="0%" stopColor="#6fe6ff" />
-                  <stop offset="100%" stopColor="#5a8cff" />
-                </linearGradient>
-                <linearGradient id="g4" x1="0%" x2="100%" y1="0%" y2="100%">
-                  <stop offset="0%" stopColor="#cfefff" />
-                  <stop offset="100%" stopColor="#9bd1ff" />
-                </linearGradient>
-              </defs>
-
-              <g className="rings">
-                <circle className="ring ring-outer" cx="180" cy="180" r="156" stroke="url(#g1)" />
-                <circle className="ring ring-3" cx="180" cy="180" r="146" stroke="url(#g2)" />
-                <circle className="ring ring-2" cx="180" cy="180" r="136" stroke="url(#g3)" />
-                <circle className="ring ring-inner" cx="180" cy="180" r="126" stroke="url(#g4)" />
-              </g>
-
-              {/* small static glow dot */}
-              <circle className="ring-dot" cx="180" cy="60" r="6" />
-
-              {/* user image clipped to circle */}
-              <image href={profilePic} x="60" y="60" width="240" height="240" clipPath="url(#avatarClip)" preserveAspectRatio="xMidYMid slice" />
-            </svg>
-          </div>
-        </div>
-
-        {/* Hero stats/cards */}
-        <div className="hero-stats" aria-hidden="false">
-          <div className="stats-grid">
-            <div className="stat-card">
-              <div className="stat-icon"><FontAwesomeIcon icon={faGraduationCap} /></div>
-              <div className="stat-body">
-                <div className="stat-title">M.C.A.</div>
-                <div className="stat-sub">Data Science · 2025 - 2027</div>
+          
+          <div className="hero-visual">
+            <div className="floating-card card-top">
+              <div className="icon-bars"><div className="bar1"/><div className="bar2"/><div className="bar3"/></div>
+              <div className="card-text">
+                <strong>Analyze<br/>Visualize<br/>Solve</strong>
+                <p>Data-driven solutions<br/>for a better tomorrow.</p>
               </div>
             </div>
-            <div className="stat-card">
-              <div className="stat-icon"><FontAwesomeIcon icon={faCode} /></div>
-              <div className="stat-body">
-                <div className="stat-title">10+</div>
-                <div className="stat-sub">Projects Completed</div>
+            
+            <div className="floating-text mid-text">
+              "Turning<br/>Data into<br/>Meaningful<br/>Impact"
+            </div>
+            
+            <div className="floating-card card-right">
+              <div className="card-text right-align">
+                <strong>Insights<br/>Strategy<br/>Growth</strong>
+                <p>Continuous<br/>Learning</p>
               </div>
             </div>
-            <div className="stat-card">
-              <div className="stat-icon"><FontAwesomeIcon icon={faCloud} /></div>
-              <div className="stat-body">
-                <div className="stat-title">AWS</div>
-                <div className="stat-sub">EC2, S3 & Cloud Basics</div>
+            
+            <div className="floating-card card-bottom">
+              <div className="card-text">
+                <strong>Data<br/>Technology</strong>
+                <p>Better Decisions</p>
               </div>
             </div>
-            <div className="stat-card">
-              <div className="stat-icon"><FontAwesomeIcon icon={faDatabase} /></div>
-              <div className="stat-body">
-                <div className="stat-title">SQL</div>
-                <div className="stat-sub">Database Design & Optimization</div>
-              </div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-icon"><FontAwesomeIcon icon={faChartBar} /></div>
-              <div className="stat-body">
-                <div className="stat-title">Data</div>
-                <div className="stat-sub">Analysis & Visualization</div>
-              </div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-icon"><FontAwesomeIcon icon={faBolt} /></div>
-              <div className="stat-body">
-                <div className="stat-title">FastAPI</div>
-                <div className="stat-sub">REST API Development</div>
-              </div>
+            
+            <div className="profile-wrapper">
+              <img src={profilePic} alt="Aniket Bhudke" className="profile-img-new" />
             </div>
           </div>
         </div>
 
+        <div className="home-support-panel">
+          {/* ── SKILL CARDS ROW ── */}
+          <div className="skill-cards-row">
+            <div className="skill-card-new">
+              <div className="skill-icon-new"><FontAwesomeIcon icon={faChartLine} /></div>
+              <h3>Data Analytics</h3>
+              <p>Turning raw data into meaningful insights</p>
+            </div>
+            <div className="skill-card-new">
+              <div className="skill-icon-new"><FontAwesomeIcon icon={faPython} /></div>
+              <h3>Python Development</h3>
+              <p>Building scalable applications</p>
+            </div>
+            <div className="skill-card-new">
+              <div className="skill-icon-new"><FontAwesomeIcon icon={faCode} /></div>
+              <h3>Web Development</h3>
+              <p>Full-stack web solutions with modern technologies</p>
+            </div>
+            <div className="skill-card-new">
+              <div className="skill-icon-new"><FontAwesomeIcon icon={faDatabase} /></div>
+              <h3>Database Management</h3>
+              <p>SQL, PostgreSQL and data optimization</p>
+            </div>
+            <div className="skill-card-new">
+              <div className="skill-icon-new"><FontAwesomeIcon icon={faLightbulb} /></div>
+              <h3>Problem Solving</h3>
+              <p>Applying technology to real-world challenges</p>
+            </div>
+          </div>
+
+          {/* ── TECHNOLOGIES ROW ── */}
+          <div className="tech-row">
+          <span className="tech-label">Technologies I Work With</span>
+          <div className="tech-icons">
+            <div className="tech-item"><FontAwesomeIcon icon={faPython} /><span>Python</span></div>
+            <div className="tech-item"><FontAwesomeIcon icon={faDatabase} /><span>SQL</span></div>
+            <div className="tech-item"><FontAwesomeIcon icon={faDatabase} /><span>PostgreSQL</span></div>
+            <div className="tech-item"><FontAwesomeIcon icon={faDatabase} /><span>MongoDB</span></div>
+            <div className="tech-item"><FontAwesomeIcon icon={faBolt} /><span>FastAPI</span></div>
+            <div className="tech-item"><FontAwesomeIcon icon={faCode} /><span>Django</span></div>
+            <div className="tech-item"><FontAwesomeIcon icon={faChartBar} /><span>Power BI</span></div>
+            <div className="tech-item"><FontAwesomeIcon icon={faAws} /><span>AWS</span></div>
+            <div className="tech-item"><FontAwesomeIcon icon={faGithub} /><span>Git</span></div>
+            <div className="tech-item"><FontAwesomeIcon icon={faHtml5} /><span>HTML5</span></div>
+            <div className="tech-item"><FontAwesomeIcon icon={faCss3Alt} /><span>CSS3</span></div>
+            <div className="tech-item"><FontAwesomeIcon icon={faJs} /><span>JavaScript</span></div>
+          </div>
+          </div>
+
+          {/* ── BOTTOM INFO BAR ── */}
+          <div className="bottom-info-bar">
+          <div className="info-item">
+            <FontAwesomeIcon icon={faGraduationCap} className="info-icon" />
+            <div className="info-text">
+              <strong>MCA</strong>
+              <p>Data Science (2025 - 2027)<br/>MIT ADT University</p>
+            </div>
+          </div>
+          <div className="info-item">
+            <FontAwesomeIcon icon={faFileAlt} className="info-icon" />
+            <div className="info-text">
+              <strong>10+</strong>
+              <p>Projects Completed</p>
+            </div>
+          </div>
+          <div className="info-item">
+            <FontAwesomeIcon icon={faTrophy} className="info-icon" />
+            <div className="info-text">
+              <strong>Top 20</strong>
+              <p>MIT-ADT Hackathon (2025)<br/>Mentora | Code Crafters</p>
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <div className="scroll-indicator" onClick={() => scrollTo('about')}>
+          <div className="mouse"></div>
+          <span>Scroll Down</span>
+          <FontAwesomeIcon icon={faChevronDown} />
+        </div>
       </section>
 
       {/* ── ABOUT ── */}
@@ -334,7 +386,7 @@ export default function Portfolio() {
               I am an <span className="accent">M.C.A. (Data Science)</span> student at MIT College of Management Pune with a strong foundation in Python, FastAPI, REST APIs, and full-stack web development. I specialize in building scalable, secure, and responsive web applications with robust backend architectures and data-driven intelligence.
             </p>
             <p>
-              My hands-on experience spans developing RESTful APIs, cloud deployment (AWS EC2, S3), database management (PostgreSQL, SQLite), and integrating AI-based solutions. I have refined these skills through a backend development internship at <span className="accent">Leadturtle Technology Services</span> and key academic projects including the MIT ADT Mess Hub, Restaurant Management System, and Event Decoration Booking platform.
+              My hands-on experience spans developing RESTful APIs, cloud deployment (AWS EC2, S3), database management (PostgreSQL, SQLite), and integrating AI-based solutions. I have refined these skills through a backend development internship at <span className="accent">Leadturtle Technology Services</span> and key academic projects including Mentora, the MIT ADT Mess Hub, and Event Decoration Booking platform.
             </p>
             <p>
               I am an active participant in hackathons, research presentations, and cyber security awareness programs. I enjoy solving complex problems, writing clean code, and working in collaborative teams to build impactful software solutions.
@@ -347,7 +399,7 @@ export default function Portfolio() {
             </div>
           </Reveal>
 
-<Reveal className="skills-section" delay={160}>
+<Reveal id="skills" className="skills-section" delay={160}>
             <div className="skills-view-toggle">
               <h3>Engineering competencies</h3>
               <div className="view-toggle-btns">
@@ -579,30 +631,44 @@ export default function Portfolio() {
           {/* Achievements */}
           {credentialsTab === 'achievements' && (
             <div className="achievements-grid">
-              {achievements.map((ach, i) => (
-                <Reveal key={ach.id} className="achievement-card" delay={i * 80}>
-                  {ach.photo && (
-                    <img
-                      className="achievement-photo"
-                      src={ach.photo}
-                      alt="Aniket Bhudke"
-                      loading="lazy"
-                    />
-                  )}
-                  <div className="achievement-card-content">
-                    <div className="ach-icon-wrap"><FontAwesomeIcon icon={ach.icon} /></div>
-                    <div className="ach-body">
-                      <div className="ach-header-row">
-                        <span className="ach-category">{ach.category}</span>
-                        {ach.highlightBadge && <span className="ach-highlight-pill">{ach.highlightBadge}</span>}
+              {achievements.map((ach, i) => {
+                const cardContent = (
+                  <Reveal key={ach.id} className="achievement-card" delay={i * 80}>
+                    {ach.photo && (
+                      <img
+                        className="achievement-photo"
+                        src={ach.photo}
+                        alt={ach.photoAlt || ach.title}
+                        loading="lazy"
+                      />
+                    )}
+                    <div className="achievement-card-content">
+                      <div className="ach-icon-wrap"><FontAwesomeIcon icon={ach.icon} /></div>
+                      <div className="ach-body">
+                        <div className="ach-header-row">
+                          <span className="ach-category">{ach.category}</span>
+                          {ach.highlightBadge && <span className="ach-highlight-pill">{ach.highlightBadge}</span>}
+                        </div>
+                        <h3>{ach.title}</h3>
+                        <p>{ach.detail}</p>
+                        {ach.link && (
+                          <span className="achievement-link-text">{ach.ctaLabel || 'View details'} →</span>
+                        )}
                       </div>
-                      <h3>{ach.title}</h3>
-                      <p>{ach.detail}</p>
                     </div>
-                  </div>
-                </Reveal>
-              ))}
-              {/* hi */}
+                  </Reveal>
+                );
+
+                if (ach.link) {
+                  return (
+                    <Link key={ach.id} to={ach.link} className="achievement-card-link">
+                      {cardContent}
+                    </Link>
+                  );
+                }
+
+                return cardContent;
+              })}
             </div>
           )}
 {/* hi */}
@@ -612,26 +678,29 @@ export default function Portfolio() {
           {/* Seminars & Workshops */}
           {credentialsTab === 'seminars' && (
             <div className="seminars-container">
-              <Reveal className="seminar-card" delay={100}>
-                <div className="seminar-icon"><FontAwesomeIcon icon={faShieldHalved} /></div>
-                <div className="seminar-body">
-                  <div className="seminar-header">
-                    <div>
-                      <h4>Cyber Shiksha for Cyber Suraksha Awareness Program</h4>
-                      <p className="seminar-org">Quick Heal Foundation</p>
+              <Link to="/stories/cyber-shiksha" className="seminar-card-link">
+                <Reveal className="seminar-card" delay={100}>
+                  <img className="seminar-photo" src={cyberCampaignPhoto} alt="Cyber Shiksha awareness campaign recognition" />
+                  <div className="seminar-body">
+                    <div className="seminar-header">
+                      <div>
+                        <h4>Cyber Shiksha for Cyber Suraksha Awareness Program</h4>
+                        <p className="seminar-org">Quick Heal Foundation</p>
+                      </div>
+                      <span className="duration">16 Nov, 2023 - 20 Feb, 2025</span>
                     </div>
-                    <span className="duration">16 Nov, 2023 - 20 Feb, 2025</span>
+                    <p className="seminar-desc">
+                      My two-year journey as a Cyber Warrior with the SKC team focused on helping students and institutions build safer digital habits. Across 19 institutions and 21 presentations, I reached approximately 6,900 students and grew through teamwork, leadership, public speaking, and social contribution.
+                    </p>
+                    <span className="seminar-story-link">Read my two-year journey →</span>
+                    <div className="seminar-skills">
+                      {seminarSkills.map((skill) => (
+                        <span key={skill} className="skill-badge">{skill}</span>
+                      ))}
+                    </div>
                   </div>
-                  <p className="seminar-desc">
-                    Participated in the "Cyber Shiksha for Cyber Suraksha" campaign organized by the Quick Heal Foundation during graduation. The program focused on spreading cyber security awareness in urban areas and schools through awareness sessions and educational activities. Actively contributed to educating students about online safety, cyber threats, digital privacy, and responsible internet usage. Recognized as a 2-year award holder for active participation and contribution to the campaign.
-                  </p>
-                  <div className="seminar-skills">
-                    {seminarSkills.map((skill) => (
-                      <span key={skill} className="skill-badge">{skill}</span>
-                    ))}
-                  </div>
-                </div>
-              </Reveal>
+                </Reveal>
+              </Link>
             </div>
           )}
 
@@ -639,25 +708,25 @@ export default function Portfolio() {
           {credentialsTab === 'activities' && (
             <div className="activities-personal-grid">
               <Reveal className="activities-card" delay={80}>
-                <h3>Co-Curricular & Extra-Curricular</h3>
+                <h3>Professional Activities & Achievements</h3>
                 <div className="activities-list-wrap">
                   <div className="activity-group">
-                    <h4>Co-Curricular</h4>
+                    <h4>Technical & Academic Activities</h4>
                     <ul>{coCurricular.map((item, i) => <li key={i}>{item}</li>)}</ul>
                   </div>
                   <div className="activity-group">
-                    <h4>Extra-Curricular</h4>
+                    <h4>Social & Leadership Activities</h4>
                     <ul>{extraCurricular.map((item, i) => <li key={i}>{item}</li>)}</ul>
                   </div>
                 </div>
               </Reveal>
               <Reveal className="personal-details-card" delay={160}>
-                <h3>Personal Information</h3>
+                <h3>Professional Profile</h3>
                 <div className="personal-info-grid">
                   {personalInfo.map((info, i) => (
                     <div key={i} className="info-item">
                       <span className="info-label">{info.label}</span>
-                      <span className="info-value">{info.value}</span>
+                      <span className="info-value">{info.value.split('\n').map((line) => <React.Fragment key={line}>{line}<br /></React.Fragment>)}</span>
                     </div>
                   ))}
                 </div>

@@ -1,0 +1,447 @@
+.cyber-story-page {
+  min-height: 100vh;
+  color: #e7edf8;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(0, 212, 255, 0.11), transparent 30%),
+    linear-gradient(145deg, #050914 0%, #0a1020 52%, #11152b 100%);
+}
+
+.cyber-story-nav {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 28px 0;
+}
+
+.cyber-story-nav button {
+  border: 1px solid rgba(133, 158, 194, 0.25);
+  border-radius: 8px;
+  padding: 11px 16px;
+  color: #b8c5da;
+  background: rgba(9, 15, 31, 0.72);
+  font: inherit;
+  cursor: pointer;
+}
+
+.cyber-story-nav button:hover {
+  color: #fff;
+  border-color: rgba(0, 212, 255, 0.65);
+}
+
+.cyber-story-hero,
+.cyber-story-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 28px;
+}
+
+.cyber-story-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  align-items: center;
+  gap: 64px;
+}
+
+.cyber-story-eyebrow,
+.cyber-story-section-heading p {
+  margin: 0 0 18px;
+  color: #19b8f2;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cyber-story-hero h1 {
+  max-width: 760px;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  line-height: 1.02;
+}
+
+.cyber-story-intro {
+  max-width: 700px;
+  margin: 28px 0 0;
+  color: #a8b5ca;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.cyber-story-intro strong,
+.cyber-story-closing strong,
+.cyber-story-year strong {
+  color: #fff;
+}
+
+.cyber-story-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.cyber-story-stats span {
+  padding: 10px 13px;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 8px;
+  color: #a8b5ca;
+  background: rgba(14, 27, 52, 0.7);
+  font-size: 0.88rem;
+}
+
+.cyber-story-stats strong {
+  color: #19b8f2;
+}
+
+.cyber-story-hero-image {
+  padding: 12px;
+  border: 1px solid rgba(0, 212, 255, 0.48);
+  border-radius: 16px;
+  background: rgba(9, 16, 33, 0.85);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.3);
+}
+
+.cyber-story-hero-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 9px;
+}
+
+.cyber-story-content {
+  padding-top: 20px;
+}
+
+.cyber-story-year {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 34px;
+  padding: 40px 0;
+  border-top: 1px solid rgba(133, 158, 194, 0.18);
+}
+
+.cyber-story-year-label {
+  color: #19b8f2;
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.cyber-story-year h2,
+.cyber-story-section-heading h2 {
+  margin: 0 0 18px;
+  color: #fff;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.cyber-story-year ul {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding-left: 20px;
+  color: #a8b5ca;
+  line-height: 1.75;
+}
+
+.cyber-story-closing {
+  max-width: 850px;
+  margin: 26px 0 88px;
+  padding: 26px 28px;
+  border-left: 3px solid #19b8f2;
+  color: #bfcbe0;
+  background: rgba(15, 28, 52, 0.7);
+  font-size: 1.12rem;
+  line-height: 1.8;
+}
+
+.competitive-story-page .cyber-story-hero {
+  grid-template-columns: minmax(0, 1fr) 360px;
+}
+
+.competitive-story-orbit {
+  position: relative;
+  display: grid;
+  width: min(100%, 360px);
+  aspect-ratio: 1;
+  place-items: center;
+  justify-self: end;
+  border: 1px solid rgba(25, 184, 242, 0.3);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(25, 184, 242, 0.14), rgba(7, 13, 28, 0.15) 45%, transparent 70%);
+  box-shadow: 0 0 80px rgba(25, 184, 242, 0.12);
+}
+
+.competitive-story-orbit::before,
+.competitive-story-orbit::after {
+  position: absolute;
+  content: '';
+  border: 1px solid rgba(160, 125, 255, 0.3);
+  border-radius: 50%;
+}
+
+.competitive-story-orbit::before {
+  width: 72%;
+  height: 72%;
+}
+
+.competitive-story-orbit::after {
+  width: 45%;
+  height: 45%;
+  border-color: rgba(25, 184, 242, 0.45);
+}
+
+.competitive-story-orbit-line {
+  position: absolute;
+  width: 118%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(25, 184, 242, 0.65), transparent);
+  transform: rotate(-35deg);
+}
+
+.competitive-story-orbit-core {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 94px;
+  height: 94px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 22px;
+  color: #07101f;
+  background: #19b8f2;
+  box-shadow: 0 0 35px rgba(25, 184, 242, 0.45);
+  font-size: 2rem;
+  transform: rotate(-8deg);
+}
+
+.competitive-story-orbit-label {
+  position: absolute;
+  right: 8%;
+  bottom: 18%;
+  color: #c9b5ff;
+  font: 700 0.9rem/1.2 monospace;
+}
+
+.competitive-practice-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 18px 0 54px;
+}
+
+.competitive-practice-card {
+  position: relative;
+  min-height: 245px;
+  padding: 24px 20px;
+  overflow: hidden;
+  border: 1px solid rgba(133, 158, 194, 0.2);
+  border-radius: 12px;
+  background: rgba(15, 28, 52, 0.68);
+}
+
+.competitive-practice-card::after {
+  position: absolute;
+  right: -32px;
+  bottom: -36px;
+  width: 110px;
+  height: 110px;
+  border: 1px solid rgba(25, 184, 242, 0.14);
+  border-radius: 50%;
+  content: '';
+}
+
+.competitive-practice-number {
+  color: #19b8f2;
+  font: 700 0.75rem/1 monospace;
+}
+
+.competitive-practice-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  margin: 26px 0 18px;
+  place-items: center;
+  border-radius: 10px;
+  color: #07101f;
+  background: #c9b5ff;
+}
+
+.competitive-practice-card h3 {
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.competitive-practice-card p {
+  margin: 0;
+  color: #a8b5ca;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.cyber-story-gallery-section {
+  padding-top: 28px;
+}
+
+.cyber-story-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.cyber-story-gallery figure {
+  margin: 0;
+}
+
+.cyber-story-gallery button {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 220px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(133, 158, 194, 0.2);
+  border-radius: 10px;
+  background: #080e1d;
+  cursor: pointer;
+}
+
+.cyber-story-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 220ms ease;
+}
+
+.cyber-story-gallery video {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border: 1px solid rgba(133, 158, 194, 0.2);
+  border-radius: 10px;
+  background: #080e1d;
+}
+
+.cyber-story-gallery button:hover img {
+  transform: scale(1.04);
+}
+
+.cyber-story-gallery button span {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(4, 9, 20, 0.8);
+}
+
+.cyber-story-gallery figcaption {
+  margin-top: 9px;
+  color: #8998b1;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.cyber-story-lightbox {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 30px;
+  background: rgba(2, 5, 13, 0.92);
+}
+
+.cyber-story-lightbox > button {
+  position: fixed;
+  top: 22px;
+  right: 25px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(20, 28, 48, 0.9);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.cyber-story-lightbox figure {
+  max-width: min(1000px, 92vw);
+  max-height: 90vh;
+  margin: 0;
+  text-align: center;
+}
+
+.cyber-story-lightbox img {
+  display: block;
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.cyber-story-lightbox figcaption {
+  margin-top: 12px;
+  color: #c6d2e5;
+}
+
+@media (max-width: 800px) {
+  .cyber-story-hero {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-top: 56px;
+  }
+
+  .cyber-story-hero-image {
+    max-width: 420px;
+  }
+
+  .competitive-story-page .cyber-story-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .competitive-story-orbit {
+    justify-self: start;
+    max-width: 320px;
+  }
+
+  .competitive-practice-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cyber-story-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .cyber-story-nav,
+  .cyber-story-hero,
+  .cyber-story-content {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .cyber-story-hero h1 {
+    font-size: 2.45rem;
+  }
+
+  .cyber-story-year {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cyber-story-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .competitive-practice-grid {
+    grid-template-columns: 1fr;
+  }
+}

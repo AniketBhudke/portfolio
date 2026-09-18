@@ -98,6 +98,14 @@ export default function ProjectDetail() {
               <h1 className="pd-fade-in pd-delay-2">{project.title}</h1>
               <p className="pd-desc pd-fade-in pd-delay-3">{project.description}</p>
 
+              {project.storyParagraphs?.length ? (
+                <div className="pd-story-box pd-fade-in pd-delay-4">
+                  {project.storyParagraphs.map((story) => (
+                    <p key={story}>{story}</p>
+                  ))}
+                </div>
+              ) : null}
+
               {project.messes?.length ? (
                 <div className="pd-mess-row pd-fade-in pd-delay-4">
                   {project.messes.map((m) => (

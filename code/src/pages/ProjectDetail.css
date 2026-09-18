@@ -215,6 +215,26 @@
   margin-bottom: 22px;
 }
 
+.pd-story-box {
+  max-width: 640px;
+  margin-bottom: 22px;
+  padding: 18px 20px;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: var(--radius);
+  background: rgba(11, 15, 30, 0.7);
+  box-shadow: inset 0 0 0 1px rgba(123, 94, 167, 0.15);
+}
+
+.pd-story-box p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.pd-story-box p + p {
+  margin-top: 10px;
+}
+
 .pd-mess-row {
   display: flex;
   flex-wrap: wrap;

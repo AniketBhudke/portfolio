@@ -83,7 +83,7 @@ const Terminal = () => {
         response.push({ type: 'output', text: '  • Employee Analytics & Attrition ML (Python, SQL, Scikit-Learn, Power BI) - HR workforce attrition prediction.' });
         response.push({ type: 'output', text: '  • MIT ADT Mess Hub (FastAPI, React) - Centralized campus mess operations.' });
         response.push({ type: 'output', text: '  • Event Decoration Booking (FastAPI) - Interactive service reservation system.' });
-        response.push({ type: 'output', text: '  • Restaurant Management System (FastAPI, SQLite) - QR-based contactless menu system.' });
+        response.push({ type: 'output', text: '  • Mentora (React, Node.js, NLP) - Personalized career and educational advisor built for Smart India Hackathon 2025.' });
         response.push({ type: 'output', text: '  • AI Traffic Control Framework - Smart city IoT & surveillance research paper (1st Prize).' });
         break;
 
