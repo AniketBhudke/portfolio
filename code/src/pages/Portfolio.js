@@ -570,6 +570,12 @@ export default function Portfolio() {
                       ))}
                     </div>
                   ) : null}
+                  {(project.status || project.mentor) ? (
+                    <div className="project-meta">
+                      {project.status ? <span className="project-status">{project.status}</span> : null}
+                      {project.mentor ? <span className="project-mentor">Mentor: {project.mentor}</span> : null}
+                    </div>
+                  ) : null}
                   <p>{project.description}</p>
                   <div className="project-card-footer">
                     <div className="project-tags">

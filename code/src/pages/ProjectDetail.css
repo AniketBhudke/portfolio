@@ -207,6 +207,28 @@
   margin: 10px 0 18px;
 }
 
+.pd-project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: -4px 0 20px;
+  color: #a8b5ca;
+  font-size: 0.84rem;
+}
+
+.pd-project-meta > span {
+  padding: 6px 10px;
+  border: 1px solid rgba(133, 158, 194, 0.24);
+  border-radius: 999px;
+  background: rgba(15, 28, 52, 0.7);
+}
+
+.pd-project-meta .pd-project-status {
+  color: #6ee7b7;
+  border-color: rgba(110, 231, 183, 0.35);
+  background: rgba(110, 231, 183, 0.1);
+}
+
 .pd-desc {
   color: var(--muted);
   line-height: 1.8;

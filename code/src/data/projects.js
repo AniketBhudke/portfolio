@@ -70,7 +70,6 @@ export const projects = [
     title: 'MIT ADT Mess Hub',
     subtitle: 'Centralized Mess Management System · FastAPI',
     category: 'backend',
-    mentor: 'prof.Satyakam Rahul',
     teamSize: '1',
     description:
       'Developed the MIT ADT Mess Hub, a web-based mess management system for students and canteen administrators. The platform enables users to access digital menus, manage mess-related services, and improve communication between students and mess management.',
@@ -136,7 +135,8 @@ export const projects = [
     title: 'AI-Based Intelligent Traffic Management Framework',
     subtitle: 'Smart Traffic Control in Pune City · Research Paper',
     category: 'research',
-    mentor: 'prof.Satyakam Rahul',
+    mentor: 'Prof. Hanifkha Pathan',
+    status: 'In Progress',
     authorsCount: 1,
     description:
       'Conducted extensive field research and surveys to design an Intelligent Traffic Management Framework (ITMF). The proposed system integrates Artificial Intelligence (AI), Internet of Things (IoT), and drone surveillance for real-time traffic monitoring in Pune City.',
@@ -193,6 +193,7 @@ export const projects = [
     title: 'Mentora - Personalized Career & Educational Advisor',
     subtitle: 'AI-Assisted Learning Path Recommender · Smart India Hackathon 2025',
     category: 'research',
+    mentor: 'Prof. Satyakam Rahul',
     teamSize: 'Team Code Crafters',
     description:
       'Our team, Code Crafters, built Mentora for the Smart Education theme at Smart India Hackathon 2025. The platform helps students discover personalized learning routes, identify the right career direction, and explore curated educational resources without the confusion of scattered information. The project was recognised as a Top 20 finalist at the MIT ADT Hackathon, where it stood out among 1,200+ competing teams.',

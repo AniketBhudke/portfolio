@@ -96,6 +96,12 @@ export default function ProjectDetail() {
             <div className="pd-hero-copy">
               <p className="project-tagline pd-fade-in pd-delay-1">{project.subtitle}</p>
               <h1 className="pd-fade-in pd-delay-2">{project.title}</h1>
+              {(project.status || project.mentor) ? (
+                <div className="pd-project-meta pd-fade-in pd-delay-3">
+                  {project.status ? <span className="pd-project-status">{project.status}</span> : null}
+                  {project.mentor ? <span>Mentor: {project.mentor}</span> : null}
+                </div>
+              ) : null}
               <p className="pd-desc pd-fade-in pd-delay-3">{project.description}</p>
 
               {project.storyParagraphs?.length ? (
