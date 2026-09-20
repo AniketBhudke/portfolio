@@ -3,20 +3,19 @@ import { Link } from 'react-router-dom';
 import Reveal from '../components/Reveal';
 import { useInView } from '../hooks/useInView';
 import { projects } from '../data/projects';
-import profilePic from '../assets/profile.png';
 import cyberCampaignPhoto from '../assets/cyber shiksha for cyber suraksha/WhatsApp Image 2026-08-22 at 10.14.53 PM.jpeg';
 import researchPhoto from '../assets/Research paper compitition/WhatsApp Image 2026-09-18 at 8.32.30 PM.jpeg';
 import mentoraPhoto from '../assets/mentora/hero.jpeg';
 import nationalRecognitionPhoto from '../assets/national level/WhatsApp Image 2026-08-22 at 10.14.53 PM.jpeg';
+import profilePic from '../assets/profile.png';
 import technicalResume from '../assets/Aniket_Bhudke_Technical_Resume.docx';
 import Terminal from '../components/Terminal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faHackerrank, faPython, faAws, faHtml5, faCss3Alt, faJs } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faHackerrank } from '@fortawesome/free-brands-svg-icons';
 import {
   faCode, faDatabase, faServer, faEnvelope, faPhone, faMapMarkerAlt,
   faGraduationCap, faCertificate, faTrophy, faShieldHalved, faLaptopCode,
-  faAward, faTerminal, faChartBar, faDownload, faCloud, faBolt,
-  faLightbulb, faFileAlt, faChartLine, faChevronDown
+  faAward, faTerminal, faChartBar, faDownload, faChevronDown
 } from '@fortawesome/free-solid-svg-icons';
 import '../App.css';
 
@@ -210,10 +209,6 @@ export default function Portfolio() {
     <div className="portfolio">
       {/* ── NAVBAR ── */}
       <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
-        <div className="nav-brand" onClick={() => scrollTo('home')}>
-          <span className="brand-ab">AB</span>
-        </div>
-        
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
           {['home', 'about', 'skills', 'projects', 'certifications', 'resume', 'contact'].map((s) => (
             <li key={s}>
@@ -244,9 +239,9 @@ export default function Portfolio() {
             <h2 className="role">Python Developer | <span className="accent">Data Analyst</span> | Full-Stack Developer</h2>
             
             <p className="hero-desc">
-              I'm an MCA Data Science student with a strong interest in data analytics and software development. I enjoy working with data, building web applications, and solving real-world problems using technology.
+              MCA Data Science student with hands-on experience in Python, SQL, Data Analytics, and Full-Stack Development. I build practical solutions through data-driven insights and modern technologies.
               <br/><br/>
-              I am particularly interested in the field of Data Analytics, where I can analyze data, generate insights, and contribute to data-driven decision making.
+              Passionate about transforming data into meaningful insights, developing dashboards, and solving real-world problems through continuous learning and innovation.
             </p>
             
             <div className="hero-actions">
@@ -258,7 +253,7 @@ export default function Portfolio() {
               </button>
             </div>
           </div>
-          
+
           <div className="hero-visual">
             <div className="floating-card card-top">
               <div className="icon-bars"><div className="bar1"/><div className="bar2"/><div className="bar3"/></div>
@@ -267,103 +262,24 @@ export default function Portfolio() {
                 <p>Data-driven solutions<br/>for a better tomorrow.</p>
               </div>
             </div>
-            
             <div className="floating-text mid-text">
               "Turning<br/>Data into<br/>Meaningful<br/>Impact"
             </div>
-            
             <div className="floating-card card-right">
               <div className="card-text right-align">
                 <strong>Insights<br/>Strategy<br/>Growth</strong>
                 <p>Continuous<br/>Learning</p>
               </div>
             </div>
-            
             <div className="floating-card card-bottom">
               <div className="card-text">
                 <strong>Data<br/>Technology</strong>
                 <p>Better Decisions</p>
               </div>
             </div>
-            
             <div className="profile-wrapper">
               <img src={profilePic} alt="Aniket Bhudke" className="profile-img-new" />
             </div>
-          </div>
-        </div>
-
-        <div className="home-support-panel">
-          {/* ── SKILL CARDS ROW ── */}
-          <div className="skill-cards-row">
-            <div className="skill-card-new">
-              <div className="skill-icon-new"><FontAwesomeIcon icon={faChartLine} /></div>
-              <h3>Data Analytics</h3>
-              <p>Turning raw data into meaningful insights</p>
-            </div>
-            <div className="skill-card-new">
-              <div className="skill-icon-new"><FontAwesomeIcon icon={faPython} /></div>
-              <h3>Python Development</h3>
-              <p>Building scalable applications</p>
-            </div>
-            <div className="skill-card-new">
-              <div className="skill-icon-new"><FontAwesomeIcon icon={faCode} /></div>
-              <h3>Web Development</h3>
-              <p>Full-stack web solutions with modern technologies</p>
-            </div>
-            <div className="skill-card-new">
-              <div className="skill-icon-new"><FontAwesomeIcon icon={faDatabase} /></div>
-              <h3>Database Management</h3>
-              <p>SQL, PostgreSQL and data optimization</p>
-            </div>
-            <div className="skill-card-new">
-              <div className="skill-icon-new"><FontAwesomeIcon icon={faLightbulb} /></div>
-              <h3>Problem Solving</h3>
-              <p>Applying technology to real-world challenges</p>
-            </div>
-          </div>
-
-          {/* ── TECHNOLOGIES ROW ── */}
-          <div className="tech-row">
-          <span className="tech-label">Technologies I Work With</span>
-          <div className="tech-icons">
-            <div className="tech-item"><FontAwesomeIcon icon={faPython} /><span>Python</span></div>
-            <div className="tech-item"><FontAwesomeIcon icon={faDatabase} /><span>SQL</span></div>
-            <div className="tech-item"><FontAwesomeIcon icon={faDatabase} /><span>PostgreSQL</span></div>
-            <div className="tech-item"><FontAwesomeIcon icon={faDatabase} /><span>MongoDB</span></div>
-            <div className="tech-item"><FontAwesomeIcon icon={faBolt} /><span>FastAPI</span></div>
-            <div className="tech-item"><FontAwesomeIcon icon={faCode} /><span>Django</span></div>
-            <div className="tech-item"><FontAwesomeIcon icon={faChartBar} /><span>Power BI</span></div>
-            <div className="tech-item"><FontAwesomeIcon icon={faAws} /><span>AWS</span></div>
-            <div className="tech-item"><FontAwesomeIcon icon={faGithub} /><span>Git</span></div>
-            <div className="tech-item"><FontAwesomeIcon icon={faHtml5} /><span>HTML5</span></div>
-            <div className="tech-item"><FontAwesomeIcon icon={faCss3Alt} /><span>CSS3</span></div>
-            <div className="tech-item"><FontAwesomeIcon icon={faJs} /><span>JavaScript</span></div>
-          </div>
-          </div>
-
-          {/* ── BOTTOM INFO BAR ── */}
-          <div className="bottom-info-bar">
-          <div className="info-item">
-            <FontAwesomeIcon icon={faGraduationCap} className="info-icon" />
-            <div className="info-text">
-              <strong>MCA</strong>
-              <p>Data Science (2025 - 2027)<br/>MIT ADT University</p>
-            </div>
-          </div>
-          <div className="info-item">
-            <FontAwesomeIcon icon={faFileAlt} className="info-icon" />
-            <div className="info-text">
-              <strong>10+</strong>
-              <p>Projects Completed</p>
-            </div>
-          </div>
-          <div className="info-item">
-            <FontAwesomeIcon icon={faTrophy} className="info-icon" />
-            <div className="info-text">
-              <strong>Top 20</strong>
-              <p>MIT-ADT Hackathon (2025)<br/>Mentora | Code Crafters</p>
-            </div>
-          </div>
           </div>
         </div>
 
