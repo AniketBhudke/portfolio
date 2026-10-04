@@ -154,16 +154,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: min(1460px, calc(100% - 90px));
+  width: min(1280px, calc(100% - 48px));
   margin: 0 auto;
-  padding: 10px 0;
+  padding: 0 32px;
+  min-height: 64px;
   background: rgba(3, 12, 24, 0.96);
   border-bottom: 1px solid rgba(26, 156, 255, 0.16);
-  transition: padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar-scrolled {
-  padding: 9px 0;
   background: rgba(5, 8, 16, 0.95);
   backdrop-filter: blur(16px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
@@ -171,23 +171,27 @@ body {
 
 .nav-links {
   list-style: none;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  gap: 8px;
   flex: 1;
+  min-width: 0;
+  margin: 0;
 }
 
 .nav-links li button {
   position: relative;
+  width: 100%;
   background: none;
   border: none;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 500;
   cursor: pointer;
-  padding: 8px 12px;
+  padding: 10px 4px;
   border-radius: 6px;
+  white-space: nowrap;
   transition: color var(--transition);
 }
 
@@ -199,8 +203,8 @@ body {
 .nav-links li button.active-link::after {
   content: "";
   position: absolute;
-  left: 16px;
-  right: 16px;
+  left: calc(50% - 12px);
+  right: calc(50% - 12px);
   bottom: 0;
   height: 2px;
   background: var(--accent);
@@ -210,17 +214,19 @@ body {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  flex: 0 0 auto;
+  margin-left: 20px;
 }
 
 .btn-connect {
   background: rgba(26, 156, 255, 0.12);
   color: var(--accent);
   border: 1px solid rgba(26, 156, 255, 0.4);
-  padding: 12px 20px;
-  border-radius: 10px;
+  min-height: 40px;
+  padding: 8px 16px;
+  border-radius: 9px;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.9rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -986,14 +992,6 @@ body {
 }
 
 @media (min-width: 1100px) and (max-height: 700px) {
-  .navbar {
-    padding: 14px 5%;
-  }
-
-  .navbar-scrolled {
-    padding: 11px 5%;
-  }
-
   .hero-section {
     padding-top: 52px;
     padding-bottom: 5px;
@@ -2472,6 +2470,7 @@ body {
     display: none;
     position: absolute;
     top: 100%; left: 0; right: 0;
+    grid-template-columns: 1fr;
     flex-direction: column;
     background: rgba(10, 10, 26, 0.98);
     padding: 20px;
@@ -2512,8 +2511,45 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes heroElementIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroGlowDrift {
+  from { transform: translate3d(-1.5%, -1%, 0) scale(0.98); }
+  to { transform: translate3d(1.5%, 1%, 0) scale(1.02); }
+}
+
+@keyframes profileFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes heroCardFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes heroCardFloatReverse {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
 .navbar {
   animation: navDropIn 0.55s ease both;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: -18%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 72% 48%, rgba(26, 156, 255, 0.13), transparent 27%),
+    radial-gradient(ellipse at 22% 28%, rgba(0, 91, 159, 0.1), transparent 24%);
+  animation: heroGlowDrift 18s ease-in-out infinite alternate;
 }
 
 .hero-text,
@@ -2529,13 +2565,23 @@ body {
 .tech-row { animation-delay: 300ms; }
 .bottom-info-bar { animation-delay: 380ms; }
 
+.hero-text > .greeting { animation: heroElementIn 0.7s 120ms both; }
+.hero-text > h1 { animation: heroElementIn 0.75s 220ms both; }
+.hero-text > .role { animation: heroElementIn 0.75s 320ms both; }
+.hero-text > .hero-desc { animation: heroElementIn 0.8s 420ms both; }
+.hero-text > .hero-actions { animation: heroElementIn 0.8s 520ms both; }
+
+.profile-wrapper { animation: profileFloat 7s 1s ease-in-out infinite; }
+.card-top { animation: heroCardFloat 6s 1.2s ease-in-out infinite; }
+.card-right { animation: heroCardFloatReverse 7s 1.5s ease-in-out infinite; }
+.card-bottom { animation: heroCardFloat 6.5s 1.8s ease-in-out infinite; }
+
 @media (max-width: 1100px) {
   .navbar {
     width: calc(100% - 40px);
+    padding-right: clamp(16px, 4vw, 40px);
+    padding-left: clamp(16px, 4vw, 40px);
   }
-
-  .nav-links { gap: 4px; }
-  .nav-links li button { padding: 8px 9px; }
 
   .section,
   .services,
@@ -2569,9 +2615,9 @@ body {
     padding: 12px 0;
   }
 
-  .navbar-scrolled { padding: 10px 0; }
   .nav-actions { gap: 8px; }
-  .btn-connect { padding: 10px 12px; font-size: 0.86rem; }
+  .nav-actions { margin-left: 0; }
+  .btn-connect { min-height: 40px; padding: 8px 12px; font-size: 0.86rem; }
 
   .hero-section {
     min-height: auto;
@@ -2837,3 +2883,44 @@ body {
   }
 }
 
+@media (max-width: 900px) {
+  .navbar {
+    width: calc(100% - 32px);
+    padding: 0 12px;
+  }
+
+  .hamburger { display: flex; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 10px;
+    background: rgba(5, 8, 16, 0.98);
+    border: 1px solid rgba(26, 156, 255, 0.16);
+    border-top: 0;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+  }
+
+  .nav-links.open { display: flex; }
+
+  .nav-links li button {
+    padding: 10px 12px;
+    text-align: left;
+  }
+
+  .nav-links li button.active-link::after {
+    left: 12px;
+    right: auto;
+    width: 24px;
+  }
+
+  .nav-actions { margin-left: auto; }
+}

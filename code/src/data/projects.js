@@ -41,6 +41,7 @@ export const projects = [
       'Optimized data pipeline performance using @st.cache_data and vectorized operations to handle dynamic filtering across 6 vehicle classes seamlessly.'
     ],
     repoUrl: 'https://github.com/AniketBhudke/uber-fleet-dashboard',
+    liveUrl: 'https://uber-dashboard-frontend.onrender.com',
     screenshotSections: [
       {
         title: 'Executive Home Dashboard',
@@ -82,6 +83,7 @@ export const projects = [
       'Integrated secure authentication, menu management, and database tables for mess transactions.'
     ],
     repoUrl: 'https://github.com/AniketBhudke/mitadt-mess-api',
+    liveUrl: 'https://mitadt-mess-api.onrender.com',
     screenshotSections: [
       {
         title: 'Campus mess hub',

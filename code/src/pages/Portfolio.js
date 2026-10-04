@@ -13,7 +13,7 @@ import Terminal from '../components/Terminal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faHackerrank } from '@fortawesome/free-brands-svg-icons';
 import {
-  faCode, faDatabase, faServer, faEnvelope, faPhone, faMapMarkerAlt,
+  faDatabase, faEnvelope, faPhone, faMapMarkerAlt,
   faGraduationCap, faCertificate, faTrophy, faShieldHalved, faLaptopCode,
   faAward, faTerminal, faChartBar, faDownload, faChevronDown
 } from '@fortawesome/free-solid-svg-icons';
@@ -209,7 +209,7 @@ export default function Portfolio() {
     <div className="portfolio">
       {/* ── NAVBAR ── */}
       <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
-        <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
+        <ul id="portfolio-navigation" className={`nav-links ${menuOpen ? 'open' : ''}`}>
           {['home', 'about', 'skills', 'projects', 'certifications', 'resume', 'contact'].map((s) => (
             <li key={s}>
               <button className={s === 'home' ? 'active-link' : ''} onClick={() => scrollTo(s === 'certifications' ? 'credentials' : s)}>
@@ -223,7 +223,13 @@ export default function Portfolio() {
           <button className="btn-connect" onClick={() => scrollTo('contact')}>
             <FontAwesomeIcon icon={faEnvelope} /> Let's Connect
           </button>
-          <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+          <button
+            className="hamburger"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle navigation menu"
+            aria-expanded={menuOpen}
+            aria-controls="portfolio-navigation"
+          >
             <span /><span /><span />
           </button>
         </div>
@@ -424,9 +430,9 @@ export default function Portfolio() {
         </Reveal>
         <div className="services-grid">
           {[
-            { icon: faCode, title: 'Frontend engineering', desc: 'Building accessible, responsive interfaces with React and modern JavaScript focused on usability and performance.', link: 'https://github.com/AniketBhudke/Fronted-project', label: 'View work on GitHub' },
-            { icon: faServer, title: 'Backend engineering', desc: 'Designing secure REST APIs, authentication flows, and modular backend services using Django and FastAPI.', link: 'https://github.com/AniketBhudke/Backend-Project', label: 'View work on GitHub' },
-            { icon: faDatabase, title: 'Data and analytics', desc: 'Applying SQL, NumPy, Pandas, and visualization workflows to convert raw data into actionable insights.', link: 'https://github.com/AniketBhudke/Database-Project', label: 'View work on GitHub' },
+            { icon: faLaptopCode, title: 'Software Engineer / Developer', desc: 'Building reliable software and full-stack applications with Python, FastAPI, React, and REST APIs.', link: 'https://github.com/AniketBhudke/mitadt-mess-api', label: 'Explore software project' },
+            { icon: faDatabase, title: 'SQL Developer', desc: 'Designing and querying relational databases with SQL and PostgreSQL to keep application data accurate and accessible.', link: 'https://github.com/AniketBhudke/Database-Project', label: 'Explore database project' },
+            { icon: faChartBar, title: 'Data Analyst', desc: 'Using Python, Pandas, NumPy, and dashboards to uncover trends and turn raw data into actionable insights.', link: 'https://github.com/AniketBhudke/uber-fleet-dashboard', label: 'Explore analytics project' },
           ].map((s, i) => (
             <Reveal key={s.title} className="service-card" delay={i * 90}>
               <div className="service-icon"><FontAwesomeIcon icon={s.icon} /></div>
@@ -469,8 +475,12 @@ export default function Portfolio() {
                   <img src={project.imgSrc} alt={project.title} loading="lazy" decoding="async" />
                   <div className="project-overlay">
                     <div className="project-overlay-actions">
+                    {project.liveUrl ? (
+                      <a href={project.liveUrl} target="_blank" rel="noreferrer" className="overlay-btn overlay-btn-primary">View live project</a>
+                    ) : (
                       <Link to={`/projects/${project.slug}`} className="overlay-btn overlay-btn-primary">View project</Link>
-                      <a href={project.repoUrl} target="_blank" rel="noreferrer" className="overlay-btn overlay-btn-secondary" onClick={(e) => e.stopPropagation()}>GitHub</a>
+                    )}
+                    <a href={project.repoUrl} target="_blank" rel="noreferrer" className="overlay-btn overlay-btn-secondary" onClick={(e) => e.stopPropagation()}>GitHub</a>
                     </div>
                   </div>
                 </div>
